@@ -1,0 +1,36 @@
+<script type="text/javascript">
+	
+	function computerPlay () {
+		let randomNumber = Math.floor(Math.random()*2);
+		switch(randomNumber) {
+			case: 0:
+			return "Rock";
+			break;
+
+			case: 1: 
+			return "Paper";
+			break;
+
+			default: 
+			return "Scissors";
+		}
+	}
+
+	//computerPlay();
+let playerPrompt = "Lets play Rock, Paper, Scissors! Enter you choice below.";
+
+	function PlayerPlay() {
+		let playerSelection = prompt(playerPrompt);
+		}
+let computerSelection = computerPlay();
+let playerSelection = PlayerPlay();
+
+	function playRound(playerSelection, computerSelection) {
+		
+	}
+
+	const playerSelection = "rock";
+	const computerSelection = computer();
+	console.log(playRound(playerSelection, computerSelection))
+
+</script>
