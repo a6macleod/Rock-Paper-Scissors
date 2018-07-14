@@ -1,13 +1,13 @@
 <script type="text/javascript">
 	
 	function computerPlay () {
-		let randomNumber = Math.floor(Math.random()*2);
+		let randomNumber = (Math.floor(Math.random()*3));
 		switch(randomNumber) {
-			case: 0:
+			case 1:
 			return "Rock";
 			break;
 
-			case: 1: 
+			case 2: 
 			return "Paper";
 			break;
 
@@ -16,21 +16,41 @@
 		}
 	}
 
-	//computerPlay();
 let playerPrompt = "Lets play Rock, Paper, Scissors! Enter you choice below.";
 
-	function PlayerPlay() {
+	function playerPlay() {
 		let playerSelection = prompt(playerPrompt);
 		}
+
 let computerSelection = computerPlay();
-let playerSelection = PlayerPlay();
+let playerSelection = playerPlay();
 
 	function playRound(playerSelection, computerSelection) {
+		if(playerSelection === computerSelection) {
+			return ("Its a tie!");
+		} else if(playerSelection === "Rock" && computerSelection === "Paper") {
+			return ("Paper Beats Rock you lose!");
+		} else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+			return ("Rock Beats Scissors, you WIN!");
+		} 
+
+		  else if (playerSelection === "Paper" && computerSelection === "Rock") {
+			return ("Paper Beats Rock, you WIN!");
+		} else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+			return("Scissors Beats Paper, you lose!");
+		}
+
+		  else if (playerSelection === "Scisssors" && computerSelection === "Rock") {
+		  	return ("Rock beats Scissors, you lose!");
+		  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+		  	return ("Scissors beat paper, you WIN!");
+		  }
 		
 	}
 
-	const playerSelection = "rock";
-	const computerSelection = computer();
+playRound();
+	//const playerSelection = "rock";
+	//const computerSelection = computer();
 	console.log(playRound(playerSelection, computerSelection))
 
 </script>
