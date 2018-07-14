@@ -16,14 +16,14 @@
 		}
 	}
 
-let playerPrompt = "Lets play Rock, Paper, Scissors! Enter you choice below.";
 
-	function playerPlay() {
-		let playerSelection = prompt(playerPrompt);
-		}
+
+	
+		let playerSelection = prompt("Lets play Rock, Paper, Scissors! Enter you choice below.");
+		
 
 let computerSelection = computerPlay();
-let playerSelection = playerPlay();
+//let playerSelection = playerPlay();
 
 	function playRound(playerSelection, computerSelection) {
 		if(playerSelection === computerSelection) {
@@ -48,9 +48,11 @@ let playerSelection = playerPlay();
 		
 	}
 
-playRound();
+//playRound();
 	//const playerSelection = "rock";
 	//const computerSelection = computer();
-	console.log(playRound(playerSelection, computerSelection))
+console.log ("You chose " + playerSelection + " and the computer chose " + computerSelection + ". " + playRound(playerSelection, computerSelection));
+//console.log(playRound(playerSelection, computerSelection))
+
 
 </script>
