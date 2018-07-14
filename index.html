@@ -1,5 +1,8 @@
-<script type="text/javascript">
+<script type="text/javascript">	
 	
+function game (x) {
+	for (let i=0; i < x; i++) {
+
 	function computerPlay () {
 		let randomNumber = (Math.floor(Math.random()*3));
 		switch(randomNumber) {
@@ -15,15 +18,14 @@
 			return "Scissors";
 		}
 	}
+//let playerScore = 0;
+//let computerScore = 0;
 
-
-
+let playerInput = prompt("Lets play Rock, Paper, Scissors! Enter you choice below.");
 	
-		let playerSelection = prompt("Lets play Rock, Paper, Scissors! Enter you choice below.");
-		
-
+let playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.substring(1).toLowerCase();
 let computerSelection = computerPlay();
-//let playerSelection = playerPlay();
+
 
 	function playRound(playerSelection, computerSelection) {
 		if(playerSelection === computerSelection) {
@@ -44,15 +46,18 @@ let computerSelection = computerPlay();
 		  	return ("Rock beats Scissors, you lose!");
 		  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
 		  	return ("Scissors beat paper, you WIN!");
+		  } else {
+		  	return ("Please enter 'Rock', 'Paper', or 'Scissors' to play.");
 		  }
 		
 	}
 
-//playRound();
-	//const playerSelection = "rock";
-	//const computerSelection = computer();
 console.log ("You chose " + playerSelection + " and the computer chose " + computerSelection + ". " + playRound(playerSelection, computerSelection));
-//console.log(playRound(playerSelection, computerSelection))
 
+
+	}
+}
+
+game(5);
 
 </script>
