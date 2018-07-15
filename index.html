@@ -18,34 +18,39 @@ function game (x) {
 			return "Scissors";
 		}
 	}
-//let playerScore = 0;
-//let computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 let playerInput = prompt("Lets play Rock, Paper, Scissors! Enter you choice below.");
 	
 let playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.substring(1).toLowerCase();
 let computerSelection = computerPlay();
 
-
 	function playRound(playerSelection, computerSelection) {
 		if(playerSelection === computerSelection) {
 			return ("Its a tie!");
 		} else if(playerSelection === "Rock" && computerSelection === "Paper") {
 			return ("Paper Beats Rock you lose!");
+			computerScore++;
 		} else if (playerSelection === "Rock" && computerSelection === "Scissors") {
 			return ("Rock Beats Scissors, you WIN!");
+			playerScore++;
 		} 
 
 		  else if (playerSelection === "Paper" && computerSelection === "Rock") {
 			return ("Paper Beats Rock, you WIN!");
+			playerScore++;
 		} else if (playerSelection === "Paper" && computerSelection === "Scissors") {
 			return("Scissors Beats Paper, you lose!");
+			computerScore++;
 		}
 
 		  else if (playerSelection === "Scisssors" && computerSelection === "Rock") {
 		  	return ("Rock beats Scissors, you lose!");
+		  	computerScore++;
 		  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
 		  	return ("Scissors beat paper, you WIN!");
+		  	playerScore++;
 		  } else {
 		  	return ("Please enter 'Rock', 'Paper', or 'Scissors' to play.");
 		  }
@@ -55,9 +60,28 @@ let computerSelection = computerPlay();
 console.log ("You chose " + playerSelection + " and the computer chose " + computerSelection + ". " + playRound(playerSelection, computerSelection));
 
 
-	}
+
+function winner (playerScore, computerScore) {
+	if (playerScore === computerScore) {
+		return ("You tied the Computer, better luck next time.");
+	} else if(playerScore < computerScore) {
+		return ("You lost to a computer, how lame!");
+	} else {
+		return ("CONGRATULATIONS YOU WON! FOOOOORRR HE's A JOLLY GOOD FELLOW!"); 
+			}
+		}
+	
+function whoWon () {
+		return ("You scored " + playerScore + " points and the computer scored " + computerScore + " points." + " " + winner());
+	} //end for loop
+
+}
+console.log(whoWon());
+
 }
 
 game(5);
+
+
 
 </script>
