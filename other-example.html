@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Let's Play Rock, Paper, Scissors!</h1>
+    <button class="button" type="button" id ="rock">rock</button>
+    <button class="button" type="button" id ="paper">paper</button>
+    <button class="button" type="button" id ="scissors">scissors</button>
+    
+    
+</body>
+
+<script>
+document.getElementById('rock').onclick = user;
+document.getElementById('paper').onclick = user;
+document.getElementById('scissors').onclick = user;
+
+
+function user(){
+    var userChoice = this.id;
+    console.log("User: " + userChoice)
+
+    var computerChoice = Math.random();
+         if (computerChoice < 0.34) {
+             computerChoice = "rock";
+          }else if(computerChoice <= 0.67) {
+             computerChoice = "paper";
+          }else{
+             computerChoice = "scissors";
+          }; 
+
+    console.log("Computer: " + computerChoice);
+
+    console.log(compare(userChoice, computerChoice)); 
+
+    function compare(choice1, choice2) {
+    
+		    if (choice1 === choice2) {
+            return "The result is a tie!";
+        }
+ 
+        if (choice1 === "rock") {
+            if (choice2 === "scissors") {
+                return "rock wins";
+            }else{
+                return "paper wins";
+            }
+				}
+ 
+         if (choice1 === "paper") {
+             if (choice2 === "rock") {
+                 return "paper wins";
+              } else {
+                  return "scissors wins";
+              }
+		     }
+		
+		     if (choice1 === "scissors") {
+             if (choice2 === "rock") {
+                 return "rock wins";
+             } else {
+                 return "scissors wins";
+            }
+        }
+    }
+}
+</script>
+</html>
