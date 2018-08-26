@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>Let's Play Rock, Paper, Scissors!</h1>
+	<p id="winnerMessage">First to reach 5 points wins!</p>
 	<div id="buttons">
 		<button class="button" type="button" id ="Rock">rock</button>
 		<button class="button" type="button" id ="Paper">paper</button>
@@ -22,19 +23,22 @@
 				<th class="table-header">Ties</th>
 			</tr>
 			<tr>
-				<td id="user-win"></td>
-				<td id="comuter-win"></td>
-				<td id="tie"></td>
+				<td id="user-win">0</td>
+				<td id="comuter-win">0</td>
+				<td id="tie-score">0</td>
 			</tr>
 		</table>
 	</div>
-	<div id="game-display">
-		
-	</div>
+	
+		<p id="gameDisplay"></p>
+	
 	
 </body>
 
 <script type="text/javascript">	
+	let playerScore = 0;
+	let computerScore = 0;
+	let tieGame = 0;
 
 document.getElementById('Rock').onclick = user;
 document.getElementById('Paper').onclick = user;
@@ -55,44 +59,57 @@ function user() {
 //	console.log('Computer: ' + computerSelection);
 
 
-let playerScore = 0;
-let computerScore = 0;
-let ties = 0;
-	
-
-
-
 	function playRound(playerSelection, computerSelection) {
+		
 			if(playerSelection === computerSelection) {
+				tieGame ++ ;
+				document.querySelector("#tie-score").textContent = tieGame;
 				return ("Its a tie!");
 			} else if(playerSelection === "Rock" && computerSelection === "Paper") {
-				//computerScore += 1;
+				computerScore ++;
+				document.querySelector("#comuter-win").textContent = computerScore;
 				return ("Paper Beats Rock you lose!");
 				
 			} else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-				//playerScore += 1;
+				playerScore ++;
+				document.querySelector("#user-win").textContent = playerScore;
 				return ("Rock Beats Scissors, you WIN!");			
 			} 
 			  else if (playerSelection === "Paper" && computerSelection === "Rock") {
-				//playerScore += 1;
-				return ("Paper Beats Rock, you WIN!");				
+				playerScore ++;
+				document.querySelector("#user-win").textContent = playerScore;
+				return ("Paper Beats Rock, you WIN!");			
 			} else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-				//computerScore += 1;
-				return ("Scissors Beats Paper, you lose!");			
+				computerScore ++;
+				document.querySelector("#comuter-win").textContent = computerScore;
+				return ("Scissors Beats Paper, you lose!");
 			} else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-			  	//computerScore += 1;
+			  	computerScore ++;
+			  	document.querySelector("#comuter-win").textContent = computerScore;
 			  	return ("Rock beats Scissors, you lose!");			  	
 		  	} else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-			  	//playerScore += 1;
+			  	playerScore ++;
+			  	document.querySelector("#user-win").textContent = playerScore;
 			  	return ("Scissors beat paper, you WIN!");
 		  	}	
+				
+			
 		}
 
-	let display = document.createElement("p");
-	let t = document.createTextNode("You chose " + playerSelection + " and the computer chose " + computerSelection + ". " + playRound(playerSelection, computerSelection));
-	display.appendChild(t);
-	document.body.appendChild(display);
+	document.querySelector("#gameDisplay").textContent = 'You chose ' + playerSelection + ' and the computer chose ' + computerSelection + '. ' + playRound(playerSelection, computerSelection);
+			
+			
+	function endGame (playerScore, computerScore, tieGame) {
+		if (playerScore === 5) {
+			document.getElementById("winnerMessage").innerHTML = "GAME OVER YOU WIN";
+		} else if (computerSelection === 5) {
+			document.getElementById("winnerMessage").innerHTML = "GAME OVER YOU LOSE";
+		} else if (tieGame === 5) {
+			document.getElementById("winnerMessage").innerHTML = "GAME OVER IT IS A TIE";
+		}
+	}
 }	
+
 </script>
 
 </html>
