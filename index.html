@@ -108,7 +108,7 @@ function user() {
 	function endGame (playerScore, computerScore, tieGame) {
 		if (playerScore == 5) {
 			document.querySelector("#winnerMessage").textContent = "GAME OVER YOU WIN!!!";
-		} else if (computerSelection == 5) {
+		} else if (computerScore == 5) {
 			document.querySelector("#winnerMessage").textContent = "GAME OVER YOU LOSE!!!";
 		} else if (tieGame == 5) {
 			document.querySelector("#winnerMessage").textContent = "GAME OVER IT IS A TIE!!!";
