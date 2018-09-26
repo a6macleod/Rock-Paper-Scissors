@@ -16,6 +16,8 @@
 		<button class="button" type="button" id ="Rock">ROCK</button>
 		<button class="button" type="button" id ="Paper">PAPER</button>
 		<button class="button" type="button" id ="Scissors">SCISSORS</button>
+		<br>
+		<button class="resetButton" type="button">RESET</button>
 	</div>
 	<br>
 	<div class="plays">
@@ -25,8 +27,8 @@
 				<th class="whoseChoice">Computer Choice</th>
 			</tr>
 			<tr>
-				<td class="playChoice">Rock</td>>
-				<td class="playChoice">Paper</td>>
+				<td class="playChoice" id="playerChoice"></td>
+				<td class="playChoice" id="computerChoice"></td>
 			</tr>
 			</table>
 	</div>
@@ -44,7 +46,7 @@
 			</tr>
 			<tr>
 				<td id="user-win">0</td>
-				<td id="comuter-win">0</td>
+				<td id="computer-win">0</td>
 				<td id="tie-score">0</td>
 			</tr>
 		</table>
