@@ -35,7 +35,6 @@ function playRound (playerSelection, computerSelection) {
 }
 
 function playComparison (playerSelection, computerSelection) {
-	console.log(playerSelection, computerSelection)
 	if(playerSelection === computerSelection) {
 		tieGame ++ ;
 		document.querySelector("#tie-score").textContent = tieGame;
